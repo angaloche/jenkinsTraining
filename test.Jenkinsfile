@@ -14,16 +14,12 @@ pipeline {
             }
         }
 
-	stage('Test') {
-           steps {
-                sh 'echo "Fail!"; exit 1'
-           }
-        }
+	
     }
 
     post {
         always {
-            emailext body: 'My Pipeline', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'My Pipeline was executed on Jenkins'
+            emailext body: 'My Pipeline was executed on Jenkins', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'My Pipeline Job execution'
         }
 
 	success {
