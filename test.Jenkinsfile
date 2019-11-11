@@ -19,7 +19,7 @@ pipeline {
 
     post {
         always {
-            emailext body: 'My Pipeline was executed on Jenkins', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'My Pipeline Job execution'
+            emailext body: 'My Pipeline was executed on Jenkins', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'My Pipeline Job execution kho'
         }
 
 	success {
